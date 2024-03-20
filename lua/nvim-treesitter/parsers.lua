@@ -1746,6 +1746,15 @@ list.rst = {
   maintainers = { "@stsewd" },
 }
 
+list.rstml = {
+  install_info = {
+    url = "https://github.com/rayliwell/tree-sitter-rstml",
+    files = { "src/parser.c", "src/scanner.c" },
+    location = "rstml",
+  },
+  maintainers = { "@rayliwell" },
+}
+
 list.ruby = {
   install_info = {
     url = "https://github.com/tree-sitter/tree-sitter-ruby",
