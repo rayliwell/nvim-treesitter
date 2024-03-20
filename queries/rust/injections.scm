@@ -1,36 +1,22 @@
 (macro_invocation
-  macro: [
-    (scoped_identifier
-      name: (_) @_macro_name)
-    (identifier) @_macro_name
-  ]
+  macro: (_) @_macro_name
   (token_tree) @injection.content
-  (#not-eq? @_macro_name "slint")
-  (#not-eq? @_macro_name "view")
+  (#not-match? @_macro_name "slint|view$")
   (#set! injection.language "rust")
   (#set! injection.include-children))
 
 (macro_invocation
-  macro: [
-    (scoped_identifier
-      name: (_) @_macro_name)
-    (identifier) @_macro_name
-  ]
+  macro: (_) @_macro_name
   (token_tree) @injection.content
-  (#eq? @_macro_name "slint")
+  (#match? @_macro_name "slint$")
   (#offset! @injection.content 0 1 0 -1)
   (#set! injection.language "slint")
   (#set! injection.include-children))
 
 (macro_invocation
-  macro:
-    [
-      (scoped_identifier
-        name: (_) @_macro_name)
-      (identifier) @_macro_name
-    ]
+  macro: (_) @_macro_name
   (token_tree) @injection.content
-  (#eq? @_macro_name "view")
+  (#match? @_macro_name "view$")
   (#set! injection.language "rstml")
   (#set! injection.include-children))
 
