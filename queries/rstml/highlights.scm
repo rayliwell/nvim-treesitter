@@ -50,6 +50,16 @@
 (node_attribute
   name: (node_identifier) @tag.attribute)
 
+(generic_identifier
+  [
+    [
+      "<"
+      ">"
+    ] @punctuation.delimiter
+    (node_identifier) @tag
+  ]
+  (#set! "priority" 101))
+
 ((text_node) @variable
   (#set! "priority" 101))
 
