@@ -6,8 +6,9 @@
 
 (self_closing_element_node) @indent.begin
 
-(open_tag
-  ">" @indent.branch)
+(element_node
+  (open_tag
+    ">" @indent.branch))
 
 (self_closing_element_node
   "/>" @indent.branch)
@@ -18,3 +19,5 @@
   ">"
   "/>"
 ] @indent.end
+
+(ERROR) @indent.auto
