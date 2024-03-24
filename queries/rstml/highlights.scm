@@ -9,6 +9,13 @@
   ] @tag.delimiter
   (#set! "priority" 101))
 
+(fragment_node
+  [
+    "<>"
+    "</>"
+  ] @tag.delimiter
+  (#set! "priority" 101))
+
 (open_tag
   [
     "<"

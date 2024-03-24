@@ -4,20 +4,25 @@
 
 (element_node) @indent.begin
 
+(fragment_node) @indent.begin
+
 (self_closing_element_node) @indent.begin
 
-(element_node
-  (open_tag
-    ">" @indent.branch))
+(open_tag
+  ">" @indent.branch)
 
 (self_closing_element_node
   "/>" @indent.branch)
+
+(fragment_node
+  "</>" @indent.branch)
 
 (close_tag) @indent.branch
 
 [
   ">"
   "/>"
+  "</>"
 ] @indent.end
 
 (ERROR) @indent.auto
