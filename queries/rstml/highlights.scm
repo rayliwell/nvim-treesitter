@@ -1,18 +1,9 @@
-(fragment_node) @tag.delimiter
-
 (doctype_node) @constant
 
 (doctype_node
   [
     "<!"
     ">"
-  ] @tag.delimiter
-  (#set! "priority" 101))
-
-(fragment_node
-  [
-    "<>"
-    "</>"
   ] @tag.delimiter
   (#set! "priority" 101))
 
